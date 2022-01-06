@@ -1,5 +1,5 @@
-import app from 'lib/app.mjs';
-import config from 'config.mjs';
+import app from './lib/app.mjs';
+import config from './config.mjs';
 import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname,join } from 'path/posix';

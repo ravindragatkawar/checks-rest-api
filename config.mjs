@@ -29,7 +29,7 @@ if (typeof cmdEnv == 'undefined' || typeof envs[cmdEnv] == 'undefined') {
     config = envs.developement;
 }
 else {
-    config = envsp[cmdEnv];
+    config = envs[cmdEnv];
 }
 
 export default config;
