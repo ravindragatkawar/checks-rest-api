@@ -1,4 +1,4 @@
-//----- environment for app -----
+//----- environments configuration for app -----
 //----- default environment is developement -----
 
 

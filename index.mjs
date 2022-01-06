@@ -1,3 +1,5 @@
+//----- entry file for app -----
+
 import app from './lib/app.mjs';
 import config from './config.mjs';
 import { readFileSync } from 'fs';
