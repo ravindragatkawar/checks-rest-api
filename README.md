@@ -129,5 +129,35 @@ On Failure:
 }
 
 
----------------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------
+PATH: /tokens                HTTP METHOD: POST
+--------------------------------------------------------------------
+Creates New auth Tokens For User
+
+Required Fields : 
+---
+{
+    "mobileNo" : 10 digit MobileNo/not a string,
+    "password" : "user's password"
+}
+
+Respone Fields Will Get:
+---
+On Success: 
+{
+    "mobileNo"    : 10 digit MobileNo/not a string,
+    "tokenId"     : "tokenId string",
+    "tokenExpiry" : "TokenExpiry in millisecondes"
+    "err"         : 0,
+    "msg"         : "success message"
+}
+
+On Failure:
+{
+    "err" : 1,
+    "msg" : "failure message"
+}
