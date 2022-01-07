@@ -47,10 +47,9 @@ Sends Back Users Information.
 
 Required Fields: Fields Must Be Sent In Headers
 ---
-{
-    "mobileNo" : 10 digit MobileNo/ not a string,
-    "tokenId"  : "non-zero tokenId string"
-}
+    "mobileNo" = 10 digit MobileNo
+    "tokenId"  = "non-zero tokenId string"
+
 
 
 Response Fields Will Get:
@@ -78,7 +77,29 @@ PATH: /users                HTTP METHOD: PUT
 --------------------------------------------------------------------
 Updates an Existing User.
 
+Required Fields: 
+---
+{
+    "mobileNo" : 10 digit mobileNo/not a string,
+    "tokenId"  : "non-zero tokenId string"
+}
 
+Optional- Fields To Be Updated -> firstName, lastName, email, password, newMobileNo 
+newMobileNo -> To Update MobileNo
+
+Response Fields Will Get:
+---
+On Success:
+{
+    "err" : 0,
+    "msg" : "success message"
+}
+
+On Failure:
+{
+    "err" : 1,
+    "msg" : "failure message"
+}
 
 
 -------------------------------------------------------------------
