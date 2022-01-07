@@ -161,3 +161,31 @@ On Failure:
     "err" : 1,
     "msg" : "failure message"
 }
+
+
+-------------------------------------------------------------------
+PATH: /tokens                HTTP METHOD: DELETE
+--------------------------------------------------------------------
+Deletes User Tokens
+
+Required Fields:
+---
+{
+    "mobileNo"    : 10 digit MobileNo/not a string,
+    "tokenId"     : "tokenId string",
+}
+
+Response Fields Will Get:
+---
+On Success:
+{
+    "err": 0,
+    "msg": "success message"
+}
+
+On Failure:
+{
+    "err" : 1,
+    "msg" : "failure message"
+}
+
