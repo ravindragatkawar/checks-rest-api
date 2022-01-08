@@ -29,12 +29,14 @@ On Success:
     "mobileNo"    : "Mobile No",
     "tokenId"     : "generated TokenId",
     "tokenExpiry" : "tokenExpiry in Milliseconds"
+    "statusCode"  : http status code
 }
 
 On Failure:
 {
-    "err" : 1,
-    "msg" : "failuser message"
+    "err"         : 1,
+    "msg"         : "failuser message"
+    "statusCode"  : http status code
 }
 
 tokenID and mobileNo Must Be Sent In Headers For Further Communication With API Server, Instead Of password and mobileNo. Except When Deleting User Or Generating New TokenId.
@@ -60,15 +62,17 @@ On Success:
     "email"    : "emai",
     "firstName": "firstName",
     "lastName" : "lastName",
-    "tnc"      : "tnc"
+    "checks"   : "checks ids array"     
     "err"      : 0,
     "msg"      : "success message"
+    "statusCode" : http status code
 }
 
 On Failure:
 {
-    "err" : 1,
-    "msg" : "failure message"
+    "err"        : 1,
+    "msg"        : "failure message",
+    "statusCode" : http status code
 }
 
 
@@ -93,12 +97,15 @@ On Success:
 {
     "err" : 0,
     "msg" : "success message"
+    "statusCode" : http status code
 }
 
 On Failure:
 {
     "err" : 1,
     "msg" : "failure message"
+    "statusCode" : http status code
+
 }
 
 
@@ -120,12 +127,14 @@ On Success:
 {
     "err": 0,
     "msg": "success message"
+    "statusCode" : http status code
 }
 
 On Failure: 
 {
     "err": 1,
     "msg": "failure message"
+    "statusCode" : http status code
 }
 
 
