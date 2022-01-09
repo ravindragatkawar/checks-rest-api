@@ -163,13 +163,83 @@ On Success:
     "tokenExpiry" : "TokenExpiry in millisecondes"
     "err"         : 0,
     "msg"         : "success message"
+    "statusCode" : http status code
+
 }
 
 On Failure:
 {
     "err" : 1,
     "msg" : "failure message"
+    "statusCode" : http status code
+
 }
+
+
+-------------------------------------------------------------------
+PATH: /tokens                HTTP METHOD: PUT
+--------------------------------------------------------------------
+Extends tokenExpiry By 1 Hour (From The When Requested) On Existing tokenId
+
+Required Fields:
+---
+{
+    "mobileNo"    : 10 digit MobileNo/not a string,
+    "tokenId"     : "tokenId string",
+    "extend"      : true
+}
+
+Response Fields Will Get:
+---
+On Success:
+{
+    "tokenExpiry": "TokenExpiry in milliseconds "
+    "err"        : 0,
+    "msg"        : "sucess message",
+    "statusCode" : http status code
+}
+
+On Failure:
+{
+    "err"        : 1,
+    "msg"        : "failure message",
+    "statusCode" : http status code
+}
+
+
+-------------------------------------------------------------------
+PATH: /tokens                HTTP METHOD: GET
+--------------------------------------------------------------------
+Sends Token Information 
+
+Required Fields :
+---
+{
+    "mobileNo"    : 10 digit MobileNo/not a string,
+    "tokenId"     : "tokenId string"
+}
+
+Response Fields:
+---
+On Success:
+{
+    "tokenId"     : "tokenId ",
+    "tokenExpiry" : "TokenExpiry in millisecondes"
+    "err"         : 0,
+    "msg"         : "sucess message",
+    "statusCode"  : http status code
+}
+
+On Failure:
+{
+    "err"        : 1,
+    "msg"        : "failure message",
+    "statusCode" : http status code
+}
+
+
+
+
 
 
 -------------------------------------------------------------------
@@ -190,19 +260,21 @@ On Success:
 {
     "err": 0,
     "msg": "success message"
+    "statusCode" : http status code
 }
 
 On Failure:
 {
     "err" : 1,
     "msg" : "failure message"
+    "statusCode" : http status code
 }
 
 
--------------------------------------------------------------------
-PATH: /tokens                HTTP METHOD: GET
---------------------------------------------------------------------
-Get Token Information.
+--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
 
-Required Fields:
----
+
+-------------------------------------------------------------------
+PATH: /checks               HTTP METHOD: POST
+--------------------------------------------------------------------
