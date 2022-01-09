@@ -289,7 +289,7 @@ Required Fields:
     "protocol"       : "http or https",
     "url"            : "URL to check",
     "method"         : "http method to use",
-    "succesCodes"    : "http success codes",
+    "successCodes"    : "http success codes",
     "timeOutSeconds" : "failure timeout seconds"
 }
 
@@ -301,8 +301,148 @@ On Success:
     "msg": "success message"
     "statusCode" : http status code,
     "checkName"  : "check name given by user"
-    "checkId"    : "id of check from server"
 }
+
+on Failure:
+{
+    "err": 1,
+    "msg": "failure message"
+    "statusCode" : http status code
+}
+
+-------------------------------------------------------------------
+PATH: /checks               HTTP METHOD: DELETE
+--------------------------------------------------------------------
+Deletes User Checks
+
+Required Fields:
+{
+    "mobileNo"    : 10 digit MobileNo/not a string,
+    "tokenId"     : "tokenId string",
+    "checkName"   : "check name to delete"
+}
+
+Response Fields Will Get:
+---
+On Success:
+{
+    "err": 0,
+    "msg": "success message"
+    "statusCode" : http status code,
+}
+
+on Failure:
+{
+    "err": 1,
+    "msg": "failure message"
+    "statusCode" : http status code
+}
+
+-------------------------------------------------------------------
+PATH: /checks               HTTP METHOD: PUT
+--------------------------------------------------------------------
+Update/Modify Existing Checks
+
+Required Fields:
+{
+    "mobileNo"    : 10 digit MobileNo/not a string,
+    "tokenId"     : "tokenId string",
+    "checkName"   : "check name to delete"
+}
+
+Optional Fields - Fields to be Updated : 
+protocol, method, url, successCodes, timeOutSeconds;
+
+Response Fields Will Get:
+---
+On Success:
+{
+    "err": 0,
+    "msg": "success message"
+    "statusCode" : http status code,
+}
+
+on Failure:
+{
+    "err": 1,
+    "msg": "failure message"
+    "statusCode" : http status code
+}
+
+
+
+-------------------------------------------------------------------
+PATH: /checks               HTTP METHOD: GET
+--------------------------------------------------------------------
+Get Existing Checks Information
+
+Required Fields: ** Fields Must Be Sent In HTTP Headers
+{
+    "mobileNo"    : 10 digit MobileNo/not a string,
+    "tokenId"     : "tokenId string",
+    "checkName"   : "check name get Or" --> getAll, namesOnly 
+}
+
+checkName Has Three Options To Send:
+---
+checkName : "check name"    --- Sends Information About Given CheckNames;
+checkName : "namesOnly"     --- Sends All Checks Names Of User in namesOnly.checkNames as Array;
+checkName : "getAll"        --- Sends All Checks Information as Object. 
+
+
+
+Response Fields Will Get:
+---
+On Success:
+
+When "checkName" : "is name of check"
+
+{
+    "protocol"       : "http/https",
+    "method"         : "http method",
+    "url"            : "url to check",
+    "successCodes"   : [http success codes array];
+    "timeOutSeconds" : timeOutSeconds/number, not a string,
+    "err"            : 0,
+    "msg"            : "success message",
+    "statusCode"     : http statusCode             
+}
+
+When "checkName" : "namesOnly"
+
+{
+    checkNames           : ["checkName","checkName","checkName"];
+    "err"                : 0,
+    "msg"                : "success message",
+    "statusCode"         : http statusCode             
+}
+
+When "checkName" : "getAll"
+---
+{
+    "checkname1" : {
+        "protocol"   : "http/https",
+        "method"     : "http method",
+        "url"        : "url to check",
+    "successCodes"   : [http success codes array];
+    "timeOutSeconds" : timeOutSeconds/number, not a string
+    }
+
+    "checkname2" : {
+        "protocol"   : "http/https",
+        "method"     : "http method",
+        "url"        : "url to check",
+    "successCodes"   : [http success codes array];
+    "timeOutSeconds" : timeOutSeconds/number, not a string
+    }
+
+    "err"            : 0,
+    "msg"            : "success message",
+    "statusCode"     : http statusCode             
+
+}
+
+
 
 on Failure:
 {
