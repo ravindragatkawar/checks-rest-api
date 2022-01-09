@@ -5,17 +5,19 @@
 let envs = {};
 
 envs.developement =  {
-    'envName' : 'developement',
-    'httpPort': 3000,
+    'envName'   : 'developement',
+    'httpPort'  : 3000,
     'httpsPort' : 3001,
-    'secrete' : 'this is a secret for password enc'
+    'secrete'   : 'this is a secret for password enc',
+    'maxChecks' : 5
 }
 
 envs.production = {
-    'envName' : 'production',
-    'httpPort': 80,
+    'envName'   : 'production',
+    'httpPort'  : 80,
     'httpsPort' : 443,
-    'secrete' : 'this is a secret for password enc'
+    'secrete'   : 'this is a secret for password enc',
+    'maxChecks' : 5
 }   
 
 

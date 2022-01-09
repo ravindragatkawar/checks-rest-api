@@ -278,3 +278,35 @@ On Failure:
 -------------------------------------------------------------------
 PATH: /checks               HTTP METHOD: POST
 --------------------------------------------------------------------
+Creates New Check For User
+
+Required Fields:
+---
+{
+    "mobileNo"       : 10 digit MobileNo/not a string,
+    "tokenId"        : "tokenId string",
+    "checkName"      : "name for this check",
+    "protocol"       : "http or https",
+    "url"            : "URL to check",
+    "method"         : "http method to use",
+    "succesCodes"    : "http success codes",
+    "timeOutSeconds" : "failure timeout seconds"
+}
+
+Response Fields Will Get :
+---
+On Success:
+{
+    "err": 0,
+    "msg": "success message"
+    "statusCode" : http status code,
+    "checkName"  : "check name given by user"
+    "checkId"    : "id of check from server"
+}
+
+on Failure:
+{
+    "err": 1,
+    "msg": "failure message"
+    "statusCode" : http status code
+}
